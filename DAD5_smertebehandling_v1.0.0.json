@@ -1,0 +1,302 @@
+{
+    "modelName": "WSAPI",
+    "collections": [
+        {
+            "collectionName": "Dansk Anæstesi Database",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "Course",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "properties": [],
+                    "childType": "Group_Course",
+                    "type": "document",
+                    "GUID": "e41fd047-d40a-4782-9d01-1ca7014a0709"
+                },
+                {
+                    "name": "Activity",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "properties": [
+                        {
+                            "name": "SOR_code",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "properties": [
+                                {
+                                    "name": "OrganizationCode",
+                                    "hackoladeMeta": {},
+                                    "isActivated": true,
+                                    "properties": [
+                                        {
+                                            "name": "Value_String",
+                                            "hackoladeMeta": {},
+                                            "isActivated": true,
+                                            "python_type": "str",
+                                            "childType": "Base_Value_String",
+                                            "type": "string",
+                                            "GUID": "39ea0809-abc2-4857-a7c3-5f180a22b8c3",
+                                            "is_list": false,
+                                            "error": {}
+                                        }
+                                    ],
+                                    "childType": "Attribute_OrganizationCode",
+                                    "type": "document",
+                                    "GUID": "6f67ed57-9b74-43ec-87a4-25c31ec54e49",
+                                    "required": true,
+                                    "error": {}
+                                }
+                            ],
+                            "ChangeLogID": "MISSING",
+                            "childType": "Base_Object",
+                            "type": "document",
+                            "GUID": "8b5eb735-2cc9-48d5-8e66-802a55f40aa2",
+                            "realName": "SOR-koden for anæstesiafdelingen",
+                            "required": true,
+                            "error": {}
+                        },
+                        {
+                            "name": "pain_management",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "properties": [
+                                {
+                                    "name": "ResultCode",
+                                    "hackoladeMeta": {},
+                                    "isActivated": true,
+                                    "properties": [
+                                        {
+                                            "name": "Value_String",
+                                            "hackoladeMeta": {},
+                                            "isActivated": true,
+                                            "python_type": "enum",
+                                            "childType": "Base_Value_String",
+                                            "type": "string",
+                                            "GUID": "d9d8ff13-55f3-4494-b010-28c487091e14",
+                                            "error": {},
+                                            "enum": [
+                                                {
+                                                    "GUID": "bec00234-7154-4b6f-80bd-7badcb28da24",
+                                                    "Udfald": "epidural_smertebehandling"
+                                                },
+                                                {
+                                                    "GUID": "03c03b08-6019-40f7-b79a-d69dd26de8dd",
+                                                    "Udfald": "epidural_fødsel"
+                                                },
+                                                {
+                                                    "GUID": "b8da0bf0-2f17-4e3b-a9f5-c4d83e7a652a",
+                                                    "Udfald": "spinal_fødsel"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "childType": "Attribute_ResultCode",
+                                    "type": "document",
+                                    "GUID": "00007315-eb76-4527-b61d-8c24562984a1",
+                                    "error": {}
+                                },
+                                {
+                                    "name": "DateTime",
+                                    "hackoladeMeta": {},
+                                    "isActivated": true,
+                                    "properties": [
+                                        {
+                                            "name": "Value_DateTime",
+                                            "hackoladeMeta": {},
+                                            "isActivated": true,
+                                            "python_type": "DateTime",
+                                            "childType": "Base_Value_DateTime",
+                                            "type": "string",
+                                            "GUID": "7f3f50e3-7a5a-4b9c-84a1-448eaa87c84c",
+                                            "error": {}
+                                        }
+                                    ],
+                                    "childType": "Attribute_DateTime",
+                                    "type": "document",
+                                    "GUID": "da5853ef-b7ae-49b5-9f72-714c279b5d0f",
+                                    "error": {}
+                                }
+                            ],
+                            "ChangeLogID": "MISSING",
+                            "childType": "Base_Object",
+                            "type": "document",
+                            "GUID": "a55bdcff-f4f2-4641-9b94-31ff86f27df7",
+                            "realName": "Smertebehandling",
+                            "description": "Typen og Dato I forhold til smertebehandling som patienten har modtaget",
+                            "error": {}
+                        }
+                    ],
+                    "childType": "Group_Activity",
+                    "type": "document",
+                    "GUID": "c6fc7aab-da2a-4760-a7ee-783425b51304"
+                },
+                {
+                    "name": "Observation",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "properties": [],
+                    "childType": "Group_Observation",
+                    "type": "document",
+                    "GUID": "0429f2cc-e211-4b2c-90dd-3b43a0907345"
+                },
+                {
+                    "name": "Contact",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "properties": [],
+                    "childType": "Group_Contact",
+                    "type": "document",
+                    "GUID": "3a1f54c6-2bd2-4627-af1e-b7fc1166f86b"
+                },
+                {
+                    "name": "Diagnosis",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "properties": [],
+                    "childType": "Group_Diagnosis",
+                    "type": "document",
+                    "GUID": "cf8daba0-5ab0-45de-877e-3b5ef200a9ce"
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "4fd3efe1-8b42-4f20-8266-032b62b1fb7d"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "dbVersion": "v1.0.0",
+            "GUID": "15c02db2-8ff2-44b2-8855-229865dc6e46",
+            "bucketId": "ef71a388-dddd-4208-b2f6-6c977c572efe",
+            "dbNameShort": "DAD5",
+            "dbSchema": "smertebehandling"
+        }
+    ],
+    "buckets": [
+        {
+            "name": "WSAPI Model",
+            "type": "bucket",
+            "collectionIds": [
+                "15c02db2-8ff2-44b2-8855-229865dc6e46"
+            ],
+            "backgroundColor": {
+                "r": 187,
+                "g": 187,
+                "b": 187,
+                "a": 1
+            },
+            "show": true,
+            "isActivated": true,
+            "GUID": "ef71a388-dddd-4208-b2f6-6c977c572efe"
+        }
+    ],
+    "views": [],
+    "relationships": [],
+    "users": [],
+    "diagramViews": [],
+    "idToNameHashTable": {
+        "ef71a388-dddd-4208-b2f6-6c977c572efe": "WSAPI Model",
+        "e41fd047-d40a-4782-9d01-1ca7014a0709": "Course",
+        "c6fc7aab-da2a-4760-a7ee-783425b51304": "Activity",
+        "0429f2cc-e211-4b2c-90dd-3b43a0907345": "Observation",
+        "3a1f54c6-2bd2-4627-af1e-b7fc1166f86b": "Contact",
+        "cf8daba0-5ab0-45de-877e-3b5ef200a9ce": "Diagnosis",
+        "15c02db2-8ff2-44b2-8855-229865dc6e46": "Dansk Anæstesi Database",
+        "8b5eb735-2cc9-48d5-8e66-802a55f40aa2": "SOR_code",
+        "a55bdcff-f4f2-4641-9b94-31ff86f27df7": "pain_management",
+        "00007315-eb76-4527-b61d-8c24562984a1": "ResultCode",
+        "d9d8ff13-55f3-4494-b010-28c487091e14": "Value_String",
+        "da5853ef-b7ae-49b5-9f72-714c279b5d0f": "DateTime",
+        "7f3f50e3-7a5a-4b9c-84a1-448eaa87c84c": "Value_DateTime"
+    },
+    "definitions": {
+        "type": "definitions",
+        "properties": [],
+        "GUID": "2f374e27-170b-48ed-9862-f7f08e3b437b"
+    },
+    "polyglotDefinitions": {
+        "type": "polyglotDefinitions",
+        "properties": [],
+        "GUID": "9d3db078-df57-424c-854d-29b3821b4a90"
+    },
+    "externalDefinitions": {
+        "type": "externalDefinitions",
+        "properties": [],
+        "GUID": "e91dd40e-b169-4135-963c-c3a680e17470"
+    },
+    "sources": [],
+    "decorativeSymbols": [],
+    "dbVersion": "2019-09",
+    "dbVendor": "JSON",
+    "appTarget": "WSAPI",
+    "creationTS": "2024-10-29T09:07:28.671Z",
+    "GUID": "a6e492e1-9aca-4065-a08d-5de8d3a5b20b",
+    "isLineageEnabled": false,
+    "lastModifTS": "2024-10-29T09:17:27.612Z",
+    "persistenceSchemaVersion": "6",
+    "isCreatedByPlugin": true,
+    "pluginInformation": {
+        "pluginName": "RKKP-WSAPI",
+        "pluginVersion": "0.1.0",
+        "pluginEngineVersion": "1.0.0"
+    },
+    "applicationInformation": {
+        "version": "6.11.9"
+    },
+    "settings": {
+        "centralPane": {
+            "dbLevel": {
+                "erd": [
+                    {
+                        "GUID": "15c02db2-8ff2-44b2-8855-229865dc6e46",
+                        "x": 1192,
+                        "y": 1356,
+                        "width": 233,
+                        "height": 123,
+                        "color": {}
+                    }
+                ],
+                "erdDefinitions": {
+                    "erd": [],
+                    "rootPath": [],
+                    "entities": [],
+                    "decorativeSymbols": []
+                },
+                "buckets": [
+                    {
+                        "x": 1152,
+                        "y": 1316,
+                        "GUID": "ef71a388-dddd-4208-b2f6-6c977c572efe"
+                    }
+                ],
+                "collapsedNodes": [],
+                "activeRelationship": "",
+                "activeRelationshipFields": {
+                    "childField": [],
+                    "parentField": []
+                },
+                "selectedCollections": [],
+                "displayColorPicker": false,
+                "graphView": {
+                    "erd": [],
+                    "buckets": [],
+                    "decorativeSymbols": [],
+                    "forceLayout": true,
+                    "defaultLinkLength": 300
+                },
+                "diagramViews": [],
+                "decorativeSymbols": [],
+                "nestedCollectionsLayout": "horizontal",
+                "options": [],
+                "relationshipUpdateDisabled": false
+            },
+            "collectionLevel": {},
+            "changed": false
+        },
+        "dtDiagram": {
+            "collapsedNodes": [],
+            "shouldDistributeCollections": false
+        }
+    }
+}

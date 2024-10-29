@@ -1,0 +1,314 @@
+:root {
+	--colorReport: 		rgba(136,204,238, 0.4);
+	--colorActivity: 	rgba(51,34,136, 0.4);
+	--colorContact: 	rgba(170,68,153, 0.4);
+	--colorCourse: 		rgba(17,119,51, 0.4);
+	--colorDiagnosis: 	rgba(221,204,119, 0.4);
+	--colorObservation: rgba(68,170,153, 0.4);
+	--colorGray: 		rgba(205, 205, 205, 0.4);
+
+	--colorRKKP: #c0d731;
+	--colorRRKP-hover: #abbe2b;
+
+	--colorContactActiveFix: 	rgba(170,68,153, 0.7);
+	--colorBorderColor: rgba(0,0,0,0.2);
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
+	font-size: 0.8rem !important;
+}
+
+p {
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+main {
+	min-height: 1000px;
+}
+
+.required {
+	color: red;
+}
+
+.optional {
+	color: gray;
+}
+
+/* Overwrite Bootstrap Behavior */
+
+.hidden {
+	visibility: hidden !important;
+	display: none !important;
+}
+
+.visible {
+	visibility: visible !important;
+	display: block !important;
+}
+
+.btn-info {
+	--bs-btn-color: #000;
+	--bs-btn-bg: var(--colorRKKP);
+	--bs-btn-border-color: var(--colorRKKP);
+	--bs-btn-hover-color: #000;
+	--bs-btn-hover-bg: var(--colorRRKP-hover);
+	--bs-btn-hover-border-color: var(--colorRRKP-hover);
+	--bs-btn-focus-shadow-rgb: 11, 172, 204;
+	--bs-btn-active-color: #000;
+	--bs-btn-active-bg: var(--colorRRKP-hover);
+	--bs-btn-active-border-color: var(--colorRRKP-hover);
+	--bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+	--bs-btn-disabled-color: #000;
+	--bs-btn-disabled-bg: var(--colorRKKP);
+	--bs-btn-disabled-border-color: var(--colorRKKP);
+}
+
+.form-check-input:checked {
+	background-color: var(--colorRKKP);
+	border-color: var(--colorRKKP);
+}
+
+.navbar-brand {
+	color: var(--colorRKKP);
+}
+
+.navbar-brand:focus,
+.navbar-brand:hover {
+	color: var(--colorRKKP);
+}
+
+.nav-tabs {
+    margin-bottom: 0 !important;
+    border: var(--bs-nav-tabs-border-width) solid transparent;
+    border-top-left-radius: var(--bs-nav-tabs-border-radius);
+    border-top-right-radius: var(--bs-nav-tabs-border-radius);
+	border-bottom: var(--bs-border-width) var(--bs-border-style) var(--colorBorderColor) !important;
+}
+
+.nav-tabs .nav-link {
+	border: var(--bs-nav-tabs-border-width) solid transparent;
+    border-top-left-radius: var(--bs-nav-tabs-border-radius);
+    border-top-right-radius: var(--bs-nav-tabs-border-radius);
+}
+
+.nav-tabs .nav-link.active {
+	--bs-bg-opacity: 1;
+	background-color: rgba(var(--bs-tertiary-bg-rgb), var(--bs-bg-opacity)) !important;
+	border-bottom: var(--bs-border-width) var(--bs-border-style) var(--colorBorderColor) !important;
+}
+
+.alert-tertiary {
+	--bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-tertiary-bg-rgb),var(--bs-bg-opacity))!important;
+
+}
+
+.list-group-item {
+	background-color: transparent !important;
+	padding: 3px;
+	margin: 3px 0px 0px 10px;
+}
+
+.list-group-flush>.list-group-item:last-child {
+    border-bottom-width: var(--bs-border-width);
+}
+
+.list-group-item:first-child {
+    border-top-width: var(--bs-border-width);
+}
+
+.bi::before, [class^="bi-"]::before, [class*=" bi-"]::before {
+    vertical-align: -0.18rem !important;
+}
+
+
+/* Layout */
+
+.container-border {
+	border-left: var(--bs-border-width) var(--bs-border-style) var(--colorBorderColor) !important;
+	border-right: var(--bs-border-width) var(--bs-border-style) var(--colorBorderColor) !important;
+	border-bottom: var(--bs-border-width) var(--bs-border-style) var(--colorBorderColor) !important;
+	margin-bottom: 10px;
+	padding-top: 25px;
+}
+
+.table-group-divider {
+	border-top: calc(var(--bs-border-width) * 2) solid var(--colorBorderColor);
+}
+
+.switch-size {
+	font-size: 1rem !important;
+}
+
+.th-attribute {
+	width: 25% !important;
+}
+
+.th-description {
+	width: 35% !important;
+}
+
+.th-type {
+	width: 10% !important;
+}
+
+.th-value {
+	width: 15% !important;
+}
+
+.th-required {
+	width: 10% !important;
+}
+
+.object_margin {
+	margin: 0rem 1rem 1rem 1rem !important;
+}
+
+.remove_object_margin {
+	margin: 0rem 0rem 0rem 0rem !important;
+}
+
+/* JSON Styles */
+.textarea-tabs {
+	border-top-left-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+}
+
+
+/* Function Styles */
+
+.hidden-col {
+	visibility: hidden !important;
+	display: none !important;
+}
+
+.hidden-row {
+	visibility: hidden !important;
+	display: none !important;
+}
+
+/* Database Object Style */
+
+.ObjectHeaderWrapper {
+	text-decoration: none;
+	color: var(--bs-body-color);
+}
+
+.objectHeaderMain {
+	padding: 1rem !important;
+	margin: 1rem !important;
+	border-top-left-radius: 5px !important;
+	border-top-right-radius: 5px !important;
+	align-items: center !important;
+	border: var(--bs-border-width) var(--bs-border-style) var(--colorBorderColor) !important;
+
+}
+
+.objectHeaderMainFlatView {
+	padding: .5rem .5rem !important;
+	border-top-left-radius: 0px !important;
+	border-top-right-radius: 0px !important;
+	align-items: center !important;
+
+}
+
+.objectDescriptionFlatView {
+	padding: .5rem .5rem !important;
+	margin: 0rem 0rem 0rem 0rem !important;
+	border-radius: 0px !important;
+	border-right: var(--bs-border-width) var(--bs-border-style) var(--colorBorderColor) !important;
+	border-left: var(--bs-border-width) var(--bs-border-style) var(--colorBorderColor) !important;
+}
+
+.objectBodyMain {
+	border-left: var(--bs-border-width) var(--bs-border-style) var(--colorBorderColor) !important;
+	border-right: var(--bs-border-width) var(--bs-border-style) var(--colorBorderColor) !important;
+	border-bottom: var(--bs-border-width) var(--bs-border-style) var(--colorBorderColor) !important;
+	border-bottom-left-radius: 5px !important;
+	border-bottom-right-radius: 5px !important;
+	margin-top: -1rem !important;
+}
+
+.objectBodyMainFlatView {
+	border-left: 0px !important;
+	border-right: 0px !important;
+	border-bottom: 0px !important;
+	border-bottom-left-radius: 0px !important;
+	border-bottom-right-radius: 0px !important;
+	margin-top: -1rem !important;
+	padding: 0rem !important
+}
+
+.table {
+	margin-bottom: 0rem !important;
+}
+
+/* Data Type Colors */
+
+.activity-txt {
+	color: var(--colorActivity) !important;
+}
+
+.report-txt {
+	color: var(--colorReport) !important;
+}
+
+.course-txt {
+	color: var(--colorCourse) !important;
+}
+
+.contact-txt {
+	color: var(--colorContact) !important;
+}
+
+.diagnosis-txt {
+	color: var(--colorDiagnosis) !important;
+}
+
+.observation-txt {
+	color: var(--colorObservation) !important;
+}
+
+.gray-txt {
+	color: var(--colorGray) !important;
+}
+
+#groupActivity .objectHeaderColor {
+	background-color: var(--colorActivity) !important;
+}
+
+#groupReport .objectHeaderColor {
+	background-color: var(--colorReport) !important;
+}
+
+#groupCourse .objectHeaderColor {
+	background-color: var(--colorCourse) !important;
+}
+
+#groupContact .objectHeaderColor {
+	background-color: var(--colorContact) !important;
+}
+
+#groupDiagnosis .objectHeaderColor {
+	background-color: var(--colorDiagnosis) !important;
+}
+
+#groupObservation .objectHeaderColor {
+	background-color: var(--colorObservation) !important;
+}
+
+#groupGray .objectHeaderColor {
+	background-color: var(--colorGray) !important;
+}
+
+.objectHeaderGray {
+	background-color: var(--colorGray);
+}
+
+.breadcrumb-item.active {
+    color: var(--bs--body-color);
+}

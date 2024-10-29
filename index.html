@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html data-bs-theme='light' lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>DAD5 v1.0.0 Dokumentation</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+        <link href="style.css" rel="stylesheet" />
+        <link href="favicon.png" rel="icon" type="image/png" />
+    </head>
+    <body>
+        <header class="mb-5">
+            <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary py-4">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="https://www.rkkp.dk/">
+                        <img class="d-inline-block me-1 align-text-middle" src="favicon.png" width="50" height="50" />
+                        RKKP
+                    </a>
+                    <ul class="navbar-nav ms-3 me-auto">
+                        <li class="nav-item ms-3">
+                            <a class="btn btn-info btn-sm hidden" href="https://github.com/RKKPdk" id="github-link">
+                                <i class="bi bi-github"></i>
+                                 GitHub
+                            </a>
+                        </li>
+                        <li class="nav-item ms-3">
+                            <a class="btn btn-info btn-sm" href="https://rkkp-wsapi.test.tcs.trifork.cloud/redoc" id="redocs-link">
+                                <i class="bi bi-window-sidebar"></i>
+                                 ReDocs
+                            </a>
+                        </li>
+                        <li class="nav-item ms-3">
+                            <a class="btn btn-info btn-sm" href="https://rkkp-wsapi.test.tcs.trifork.cloud/docs" id="swagger-link">
+                                <i class="bi bi-menu-button-wide"></i>
+                                 Swagger UI
+                            </a>
+                        </li>
+                        <li class="nav-item ms-3">
+                            <a class="btn btn-info btn-sm disabled" href="#" id="ldm-link">
+                                <i class="bi bi-database"></i>
+                                 RKKP Data Model
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="d-flex">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <button class="btn btn-info btn-sm ms-2 visible" type="button" onclick="expandAll()" id="toggleExpand">
+                                    <i class="bi bi-arrows-expand"></i>
+                                     Fold Alt Ud
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row align-items-center me-3">
+                            <div class="col">
+                                <button class="btn btn-info btn-sm ms-2 hidden" type="button" onclick="collapseAll()" id="toggleCollapse">
+                                    <i class="bi bi-arrows-collapse"></i>
+                                     Fold Alt Ind
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col flex-fill">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input switch-size" type="checkbox" id="toggleAdvView" />
+                                    <label class="form-check-label switch-size" for="flexSwitchCheckChecked">Avanceret Visning</label>
+                                </div>
+                            </div>
+                            <div class="col flex-fill">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input switch-size" type="checkbox" id="toggleFlatView" />
+                                    <label class="form-check-label switch-size" for="toggleFlatView">Tabel Visning</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col flex-fill">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input switch-size" type="checkbox" id="toggleGrayscale" />
+                                    <label class="form-check-label switch-size" for="toggleGrayscale">Gråskala</label>
+                                </div>
+                            </div>
+                            <div class="col flex-fill">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input switch-size" type="checkbox" id="toggleDarkMode" />
+                                    <label class="form-check-label switch-size" for="toggleDarkMode">Dark Mode</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <div class="container-lg" style="margin-top:6rem !important">
+                <div class="row mt-4">
+                    <div class="col-sm-12 mt-5">
+                        <div class="alert alert-tertiary border" style="margin-bottom: 0px !important">
+                            <div class="container-fluid">
+                                <div class="row d-flex align-items-center">
+                                    <div class="col-md-8">
+                                        <h1>Dansk Anæstesi Database</h1>
+                                    </div>
+                                    <div class="col-md-4 d-flex justify-content-end">
+                                        <ul class="nav ">
+                                            <li class="nav-item ms-2">
+                                                <button class="btn btn-info btn-sm disabled">
+                                                    <i class="bi bi-card-list"></i>
+                                                     Change Logs
+                                                </button>
+                                            </li>
+                                            <li class="nav-item ms-2">
+                                                <div class="dropdown">
+                                                    <button data-bs-toggle='dropdown' class="btn btn-info btn-sm disabled dropdown-toggle">
+                                                        <i class="bi bi-git"></i>
+                                                         Version History
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li class="dropdown-item">
+                                                            <a class="dropdown-item" href="#">Version 1.0.0</a>
+                                                        </li>
+                                                        <li class="dropdown-item">
+                                                            <a class="dropdown-item" href="#">Version 1.1.0</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <h4>DAD5 - Smertebehandling</h4>
+                                        <h6>Dokumentation til endpoint version: v1.0.0
+                                            <span class="badge bg-success hidden" style="vertical-align: super !important;font-size: 12px;">Newest version</span>
+                                        </h6>
+                                        <p>Dette er endpoint dokumentation til databasen DAD5 - Smertebehandling.</p>
+                                        <hr />
+                                        <h5>Implementeringsguide</h5>
+                                        <p><p>...</p></p>
+                                        <hr />
+                                        <p>I denne dokumentation kan du finde en oversigt over dataobjekterne i databasen, samt deres attributter, beskrivelser af attributter (hvor tilgængeligt), og kravstatus. I headeren kan du finde værktøjer til at tilpasse din visning af dokumentationen.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-sm-12">
+                        <div class="p-3 bg-body-tertiary border rounded-3">
+                            <input class="form-control form-control-lg" id="searchInput" placeholder="Søg i objektnavne og beskrivelser ..." type="text" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-sm-12">
+                        <ul class="nav nav-tabs d-flex justify-content-start">
+                            <li class="nav-item">
+                                <button class="nav-link active" id="showAll" type="button" onclick="filterTypes('showAll', this)"><i class="bi bi-square-fill gray-txt me-2"></i>Show all</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" id="tabActivity" type="button" onclick="filterTypes('groupActivity', this)"><i class="bi bi-square-fill bg-body-tertiary activity-txt me-2"></i>Activities</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link hidden" id="tabContact" type="button"><i class="bi bi-square-fill contact-txt me-2"></i>Contacts</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link hidden" id="tabCourse" type="button"><i class="bi bi-square-fill course-txt me-2"></i>Courses</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link hidden" id="tabDiagnosis" type="button"><i class="bi bi-square-fill diagnosis-txt me-2"></i>Diagnosis</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link hidden" id="tabObservation" type="button"><i class="bi bi-square-fill observation-txt me-2"></i>Observations</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" id="tabReport" type="button" onclick="filterTypes('groupReport', this)"><i class="bi bi-square-fill bg-body-tertiary report-txt me-2"></i>Report Objects</button>
+                            </li>
+                        </ul>
+                        <div class="container container-border bg-body-tertiary">
+                            <ul class="nav mb-2 d-flex justify-content-end">
+                                <li class="nav-item me-2">
+                                    <a class="btn btn-info btn-sm" href="dad5_export_v1_0_0.xlsx">
+                                        <i class="bi bi-filetype-xlsx"></i>
+                                         Eksporter (Excel)
+                                    </a>
+                                </li>
+                                <li class="nav-item ms-2">
+                                    <button data-bs-toggle='modal' data-bs-target='#jsonModal' class="btn btn-info btn-sm">
+                                        <i class="bi bi-filetype-json"></i>
+                                         JSON Eksempel
+                                    </button>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane fade show active" id="tabAll-pane">
+                                    <div class="alert alert-danger m-3" role="alert">
+                                        <div class="d-flex align-items-center">
+                                            <h6 style="position: relative; top: 2px;">Bemærk: </h6>
+                                            <div class="badge rounded-pill text-bg-danger ms-2 me-2 d-inline-flex align-items-center" style="margin-top: -3px;">
+                                                <i class="bi bi-exclamation-diamond me-1" style="margin-top: -2px;"></i>
+                                                <span class=""> Required</span>
+                                            </div>
+                                        </div>
+                                        <p>Alle felter skal som udgangspunkt indberettes. Felter markeret som <strong>required</strong> er påkrævet for at kunne oprette en indberetning.</p>
+                                    </div>
+                                    <div id="groupActivity" class="groupActivity">
+                                        <div class="dataObject">
+                                            <a data-bs-toggle='collapse' aria-expanded='false' href="#SOR_code1" class="ObjectHeaderWrapper">
+                                                <ol class="breadcrumb objectHeaderMain objectHeaderColor">
+                                                    <i class="bi bi-folder2 me-2"></i>
+                                                    <li class="breadcrumb-item">DAD5</li>
+                                                    <li class="breadcrumb-item">Activity</li>
+                                                    <li class="breadcrumb-item active">SOR_code</li>
+                                                    <li class="mx-2"> - </li>
+                                                    <li><strong>SOR-koden for anæstesiafdelingen</strong></li>
+                                                    <div class="badge rounded-pill text-bg-danger ms-auto">
+                                                        <i class="bi bi-exclamation-diamond"></i>
+                                                        <span class=""> Required</span>
+                                                    </div>
+                                                </ol>
+                                            </a>
+                                            <div class="collapse m-3 objectBodyMain" id="SOR_code1">
+                                                <div class="object_margin">
+                                                    <p class="table_view_hider" style="height: 1rem !important; margin: 0px !important;"></p>
+                                                    <div class="objectDescription alert alert-warning">
+                                                        <p><strong>SOR-koden for anæstesiafdelingen</strong></p>
+                                                    </div>
+                                                    <table class="table table-bordered table-striped table-hover ">
+                                                        <thead>
+                                                            <tr>
+                                                                <th scope="col" class="fst-italic th-attribute">Attribute</th>
+                                                                <th scope="col" class="fst-italic th-description">Description</th>
+                                                                <th scope="col" class="fst-italic th-type">Type</th>
+                                                                <th scope="col" class="fst-italic th-value">Constraints</th>
+                                                                <th scope="col" class="fst-italic th-required">Required</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody class="table-group-divider">
+                                                            <tr>
+                                                                <th scope="row">OrganizationCode</th>
+                                                                <td scope="row"></td>
+                                                                <td scope="row">String</td>
+                                                                <td scope="row"></td>
+                                                                <td scope="row">
+                                                                    <div class="badge rounded-pill text-bg-danger ms-2 me-2 d-inline-flex align-items-center" style="margin-top: -3px;">
+                                                                        <i class="bi bi-exclamation-diamond me-1" style="margin-top: -2px;"></i>
+                                                                        <span class=""> Required</span>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="dataObject">
+                                            <a data-bs-toggle='collapse' aria-expanded='false' href="#pain_management2" class="ObjectHeaderWrapper">
+                                                <ol class="breadcrumb objectHeaderMain objectHeaderColor">
+                                                    <i class="bi bi-folder2 me-2"></i>
+                                                    <li class="breadcrumb-item">DAD5</li>
+                                                    <li class="breadcrumb-item">Activity</li>
+                                                    <li class="breadcrumb-item active">pain_management</li>
+                                                    <li class="mx-2"> - </li>
+                                                    <li><strong>Smertebehandling</strong></li>
+                                                </ol>
+                                            </a>
+                                            <div class="collapse m-3 objectBodyMain" id="pain_management2">
+                                                <div class="object_margin">
+                                                    <p class="table_view_hider" style="height: 1rem !important; margin: 0px !important;"></p>
+                                                    <div class="objectDescription alert alert-warning">
+                                                        <p><strong>Smertebehandling</strong></p>
+                                                        <p><p>Typen og Dato I forhold til smertebehandling som patienten har modtaget</p></p>
+                                                    </div>
+                                                    <table class="table table-bordered table-striped table-hover ">
+                                                        <thead>
+                                                            <tr>
+                                                                <th scope="col" class="fst-italic th-attribute">Attribute</th>
+                                                                <th scope="col" class="fst-italic th-description">Description</th>
+                                                                <th scope="col" class="fst-italic th-type">Type</th>
+                                                                <th scope="col" class="fst-italic th-value">Constraints</th>
+                                                                <th scope="col" class="fst-italic th-required">Required</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody class="table-group-divider">
+                                                            <tr>
+                                                                <th scope="row">DateTime</th>
+                                                                <td scope="row"></td>
+                                                                <td scope="row">DateTime</td>
+                                                                <td scope="row"></td>
+                                                                <td scope="row"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">ResultCode</th>
+                                                                <td scope="row"></td>
+                                                                <td scope="row">str, Enum</td>
+                                                                <td scope="row">
+                                                                    <p style="margin:0px; font-weight: bold;">Udfald:</p>
+                                                                    <ul class="list-group list-group-flush">
+                                                                        <li class="list-group-item">"epidural_smertebehandling"</li>
+                                                                        <li class="list-group-item">"epidural_foedsel"</li>
+                                                                        <li class="list-group-item">"spinal_foedsel"</li>
+                                                                    </ul>
+                                                                </td>
+                                                                <td scope="row"></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="groupContact" class="groupContact"></div>
+                                    <div id="groupCourse" class="groupCourse"></div>
+                                    <div id="groupDiagnosis" class="groupDiagnosis"></div>
+                                    <div id="groupObservation" class="groupObservation"></div>
+                                    <div id="groupReport" class="groupReport">
+                                        <div class="dataObject">
+                                            <a data-bs-toggle='collapse' aria-expanded='false' href="#Organization" class="ObjectHeaderWrapper">
+                                                <ol class="breadcrumb objectHeaderMain objectHeaderColor">
+                                                    <i class="bi bi-folder2 me-2"></i>
+                                                    <li class="breadcrumb-item">DAD5</li>
+                                                    <li class="breadcrumb-item">Report</li>
+                                                    <li aria-current='page' class="breadcrumb-item active">Organization</li>
+                                                    <span class="badge rounded-pill text-bg-danger ms-auto">* Required</span>
+                                                </ol>
+                                            </a>
+                                            <div class="collapse m-3 objectBodyMain" id="Organization">
+                                                <div class="object_margin">
+                                                    <p class="table_view_hider" style="height: 1rem !important; margin: 0px !important;"></p>
+                                                    <h2 class="table_view_hider">Attributes</h2>
+                                                    <table class="table table-bordered table-striped table-hover ">
+                                                        <thead>
+                                                            <tr>
+                                                                <th scope="col" class="fst-italic th-attribute">Attribute</th>
+                                                                <th scope="col" class="fst-italic th-description">Description</th>
+                                                                <th scope="col" class="fst-italic th-type">Type</th>
+                                                                <th scope="col" class="fst-italic th-value">Constraint(s)</th>
+                                                                <th scope="col" class="fst-italic th-required">Required</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody class="table-group-divider">
+                                                            <tr>
+                                                                <th scope="row">OrganizationType</th>
+                                                                <td scope="row">Typen af Identifier, som bliver indberettet.</td>
+                                                                <td scope="row">Udfald (str)</td>
+                                                                <td scope="row">
+                                                                    <p style="margin:0px; font-weight: bold;">Udfald:</p>
+                                                                    <ul class="list-group list-group-flush">
+                                                                        <li class="list-group-item">sor</li>
+                                                                        <li class="list-group-item">shak</li>
+                                                                        <li class="list-group-item">regionskode</li>
+                                                                        <li class="list-group-item">kommunekode</li>
+                                                                        <li class="list-group-item">ydernummer</li>
+                                                                        <li class="list-group-item">lokationsnummer</li>
+                                                                    </ul>
+                                                                </td>
+                                                                <td scope="row">
+                                                                    <span class="badge rounded-pill text-bg-danger ms-auto">* Required</span>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">Identifier</th>
+                                                                <td scope="row">ID på den enkelte organisation, der er ansvarlig for indberetning af patienten. Typen af ID skal følge den indsendte OrganizationType.</td>
+                                                                <td scope="row">string</td>
+                                                                <td scope="row"></td>
+                                                                <td scope="row">
+                                                                    <span class="badge rounded-pill text-bg-danger ms-auto">* Required</span>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="dataObject">
+                                            <a data-bs-toggle='collapse' aria-expanded='false' href="#Patient" class="ObjectHeaderWrapper">
+                                                <ol class="breadcrumb objectHeaderMain objectHeaderColor">
+                                                    <i class="bi bi-folder2 me-2"></i>
+                                                    <li class="breadcrumb-item">DAD5</li>
+                                                    <li class="breadcrumb-item">Report</li>
+                                                    <li aria-current='page' class="breadcrumb-item active">Patient</li>
+                                                    <span class="badge rounded-pill text-bg-danger ms-auto">* Required</span>
+                                                </ol>
+                                            </a>
+                                            <div class="collapse m-3 objectBodyMain" id="Patient">
+                                                <div class="object_margin">
+                                                    <p class="table_view_hider" style="height: 1rem !important; margin: 0px !important;"></p>
+                                                    <h2 class="table_view_hider">Attributes</h2>
+                                                    <table class="table table-bordered table-striped table-hover ">
+                                                        <thead>
+                                                            <tr>
+                                                                <th scope="col" class="fst-italic th-attribute">Attribute</th>
+                                                                <th scope="col" class="fst-italic th-description">Description</th>
+                                                                <th scope="col" class="fst-italic th-type">Type</th>
+                                                                <th scope="col" class="fst-italic th-value">Constraints</th>
+                                                                <th scope="col" class="fst-italic th-required">Required</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody class="table-group-divider">
+                                                            <tr>
+                                                                <th scope="row">CivilRegistrationNumber</th>
+                                                                <td scope="row"></td>
+                                                                <td scope="row">string</td>
+                                                                <td scope="row">Standard formatering af CPR.</td>
+                                                                <td scope="row">
+                                                                    <span class="badge rounded-pill text-bg-danger ms-auto">* Required</span>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <div class="modal modal-xl fade" id="jsonModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title fs-5" id="jsonModalLabel">API request struktur af DAD5 v1.0.0</h5>
+                        <button data-bs-dismiss='modal' type="button" class="btn-close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="alert alert-tertiary border">
+                            <p>Dette er et auto-genereret eksempel af JSON strukturen til indberetning af data.</p>
+                            <hr />
+                            <p>For mere information om processen af at indsende data til API'en, se venligst vores tekniske guide                                         på www.rkkp.dk eller besøg <a href='https://rkkp-wsapi.test.tcs.trifork.cloud/docs' target='_blank'>Swagger UI</a>.                                         På <a href='https://rkkp-wsapi.test.tcs.trifork.cloud/docs' target='_blank'>Swagger UI</a> kan du finde en oversigt                                         over API endpoints, samt detaljerede beskrivelser af de tilgængelige API forespørgsler, som kan foretages til hvert endpoint. </p>
+                        </div>
+                        <ul class="nav nav-tabs" id="myTab" style="border-bottom: 0px !important">
+                            <li class="nav-item">
+                                <button class="nav-link active" id="postJSONTab" onclick="jsonTabs(this.id)">POST Example</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" id="putJSONTab" onclick="jsonTabs(this.id)">PUT Example</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="" id="postJSONContent">
+                                <div class="form-floating mb-3">
+                                    <textarea class="form-control textarea-tabs bg-body-tertiary current_json" id="json_post_textarea" style="height: 1000px">{
+    "Report": {
+        "Patient": {
+            "CivilRegistrationNumber": "1306588762"
+        },
+        "Organization": {
+            "OrganizationType": "regionskode",
+            "Identifier": "1234"
+        },
+        "Data": {
+            "Activity": {
+                "SOR_code": {
+                    "OrganizationCode": "WeYpJSWdINmqqAYsLCba"
+                },
+                "pain_management": {
+                    "DateTime": "09-06-2015 14:20:27",
+                    "ResultCode": "epidural_foedsel"
+                }
+            }
+        }
+    }
+}</textarea>
+                                    <label _for="floatingTextarea2">JSON POST Structure</label>
+                                </div>
+                            </div>
+                            <div class="hidden" id="putJSONContent">
+                                <div class="form-floating mb-3">
+                                    <textarea class="form-control textarea-tabs bg-body-tertiary" id="json_put_textarea" style="height: 1000px">{
+    "Report": {
+        "Patient": {
+            "CivilRegistrationNumber": "3009136BY2"
+        },
+        "Organization": {
+            "OrganizationType": "regionskode",
+            "Identifier": "1234"
+        },
+        "Data": {
+            "Activity": {
+                "SOR_code": {
+                    "OrganizationCode": "XsrpsyaKBHelqrHtGCZD"
+                },
+                "pain_management": {
+                    "DateTime": "04-10-1999 01:36:12",
+                    "ResultCode": "epidural_smertebehandling"
+                }
+            }
+        }
+    }
+}</textarea>
+                                    <label _for="floatingTextarea2">JSON PUT Structure</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button data-bs-dismiss='modal' type="button" class="btn btn-secondary btn-sm">Close Window</button>
+                        <button type="button" class="btn btn-primary btn-sm" id="copyJsonButton" onclick="copyText()">Copy JSON</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" crossorgigin="anonymous"></script>
+        <script src="js/rkkp.js" crossorgigin="anonymous"></script>
+        <script>
+            
+        // Bootstrap tooltips
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
+
+        window.addEventListener('DOMContentLoaded', function () {
+
+            // Hide Advanced Data
+
+            hideAdvancedRows() // Hide Rows with class advanced-data
+            hideAdvancedColumn(2); // Hide Column 1 (Type)
+        });
+                           
+        </script>
+    </body>
+</html>

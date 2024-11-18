@@ -132,13 +132,13 @@
                                 <div class="row">
                                     <div class="col">
                                         <h4>DAD5 - Smertebehandling</h4>
-                                        <h6>Dokumentation til endpoint version: v1.0.0
+                                        <h6>Dokumentation til endpoint version: 1.0.0
                                             <span class="badge bg-success hidden" style="vertical-align: super !important;font-size: 12px;">Newest version</span>
                                         </h6>
-                                        <p>Dette er endpoint dokumentation til databasen DAD5 - Smertebehandling.</p>
                                         <hr />
                                         <h5>Implementeringsguide</h5>
-                                        <p><p>...</p></p>
+                                        <p><p>Alle anæstesier udført på danske offentlige og private hospitaler og klinikker indgår i populationen til Dansk Anæstesi Database.</p>
+<p>Datateknisk trigger for en anæstesi: Er der oprettet et anæstesiskema/anæstesiprocedure på patienten med et starttidspunkt for anæstesien, betragtes det som en anæstesi.</p></p>
                                         <hr />
                                         <p>I denne dokumentation kan du finde en oversigt over dataobjekterne i databasen, samt deres attributter, beskrivelser af attributter (hvor tilgængeligt), og kravstatus. I headeren kan du finde værktøjer til at tilpasse din visning af dokumentationen.</p>
                                     </div>
@@ -208,25 +208,25 @@
                                     </div>
                                     <div id="groupActivity" class="groupActivity">
                                         <div class="dataObject">
-                                            <a data-bs-toggle='collapse' aria-expanded='false' href="#SOR_code1" class="ObjectHeaderWrapper">
+                                            <a data-bs-toggle='collapse' aria-expanded='false' href="#SOR_anesthesia1" class="ObjectHeaderWrapper">
                                                 <ol class="breadcrumb objectHeaderMain objectHeaderColor">
                                                     <i class="bi bi-folder2 me-2"></i>
                                                     <li class="breadcrumb-item">DAD5</li>
                                                     <li class="breadcrumb-item">Activity</li>
-                                                    <li class="breadcrumb-item active">SOR_code</li>
+                                                    <li class="breadcrumb-item active">SOR_anesthesia</li>
                                                     <li class="mx-2"> - </li>
-                                                    <li><strong>SOR-koden for anæstesiafdelingen</strong></li>
+                                                    <li><strong>SOR-anæstesiafdelingen</strong></li>
                                                     <div class="badge rounded-pill text-bg-danger ms-auto">
                                                         <i class="bi bi-exclamation-diamond"></i>
                                                         <span class=""> Required</span>
                                                     </div>
                                                 </ol>
                                             </a>
-                                            <div class="collapse m-3 objectBodyMain" id="SOR_code1">
+                                            <div class="collapse m-3 objectBodyMain" id="SOR_anesthesia1">
                                                 <div class="object_margin">
                                                     <p class="table_view_hider" style="height: 1rem !important; margin: 0px !important;"></p>
                                                     <div class="objectDescription alert alert-warning">
-                                                        <p><strong>SOR-koden for anæstesiafdelingen</strong></p>
+                                                        <p><strong>SOR-anæstesiafdelingen</strong></p>
                                                     </div>
                                                     <table class="table table-bordered table-striped table-hover ">
                                                         <thead>
@@ -241,7 +241,7 @@
                                                         <tbody class="table-group-divider">
                                                             <tr>
                                                                 <th scope="row">OrganizationCode</th>
-                                                                <td scope="row"></td>
+                                                                <td scope="row"><p>SOR-koden for anæstesiafdelingen</p></td>
                                                                 <td scope="row">String</td>
                                                                 <td scope="row"></td>
                                                                 <td scope="row">
@@ -294,14 +294,18 @@
                                                             </tr>
                                                             <tr>
                                                                 <th scope="row">ResultCode</th>
-                                                                <td scope="row"></td>
+                                                                <td scope="row"><p>Ekstra oplysninger til udfald: </p>
+<ul>
+<li>naad12  = Fødespinal</li>
+</ul></td>
                                                                 <td scope="row">str, Enum</td>
                                                                 <td scope="row">
                                                                     <p style="margin:0px; font-weight: bold;">Udfald:</p>
                                                                     <ul class="list-group list-group-flush">
                                                                         <li class="list-group-item">"epidural_smertebehandling"</li>
                                                                         <li class="list-group-item">"epidural_foedsel"</li>
-                                                                        <li class="list-group-item">"spinal_foedsel"</li>
+                                                                        <li class="list-group-item">"naad12"</li>
+                                                                        <li class="list-group-item">"perifer_blokade"</li>
                                                                     </ul>
                                                                 </td>
                                                                 <td scope="row"></td>
@@ -449,7 +453,7 @@
                                     <textarea class="form-control textarea-tabs bg-body-tertiary current_json" id="json_post_textarea" style="height: 1000px">{
     "Report": {
         "Patient": {
-            "CivilRegistrationNumber": "1306588762"
+            "CivilRegistrationNumber": "1602366Aa7"
         },
         "Organization": {
             "OrganizationType": "regionskode",
@@ -457,11 +461,11 @@
         },
         "Data": {
             "Activity": {
-                "SOR_code": {
-                    "OrganizationCode": "WeYpJSWdINmqqAYsLCba"
+                "SOR_anesthesia": {
+                    "OrganizationCode": "aCdZOTxwPcnlCXCPCJTO"
                 },
                 "pain_management": {
-                    "DateTime": "09-06-2015 14:20:27",
+                    "DateTime": "07-09-2008 12:49:20",
                     "ResultCode": "epidural_foedsel"
                 }
             }
@@ -476,7 +480,7 @@
                                     <textarea class="form-control textarea-tabs bg-body-tertiary" id="json_put_textarea" style="height: 1000px">{
     "Report": {
         "Patient": {
-            "CivilRegistrationNumber": "3009136BY2"
+            "CivilRegistrationNumber": "2602413085"
         },
         "Organization": {
             "OrganizationType": "regionskode",
@@ -484,12 +488,12 @@
         },
         "Data": {
             "Activity": {
-                "SOR_code": {
-                    "OrganizationCode": "XsrpsyaKBHelqrHtGCZD"
+                "SOR_anesthesia": {
+                    "OrganizationCode": "PmWRQDrhzJuAkJKuSjGB"
                 },
                 "pain_management": {
-                    "DateTime": "04-10-1999 01:36:12",
-                    "ResultCode": "epidural_smertebehandling"
+                    "DateTime": "25-05-2003 20:52:49",
+                    "ResultCode": "naad12"
                 }
             }
         }

@@ -20,7 +20,7 @@
                     "isActivated": true,
                     "properties": [
                         {
-                            "name": "SOR_code",
+                            "name": "SOR_anesthesia",
                             "hackoladeMeta": {},
                             "isActivated": true,
                             "properties": [
@@ -45,6 +45,7 @@
                                     "type": "document",
                                     "GUID": "6f67ed57-9b74-43ec-87a4-25c31ec54e49",
                                     "required": true,
+                                    "description": "SOR-koden for anæstesiafdelingen",
                                     "error": {}
                                 }
                             ],
@@ -52,7 +53,7 @@
                             "childType": "Base_Object",
                             "type": "document",
                             "GUID": "8b5eb735-2cc9-48d5-8e66-802a55f40aa2",
-                            "realName": "SOR-koden for anæstesiafdelingen",
+                            "realName": "SOR-anæstesiafdelingen",
                             "required": true,
                             "error": {}
                         },
@@ -86,7 +87,11 @@
                                                 },
                                                 {
                                                     "GUID": "b8da0bf0-2f17-4e3b-a9f5-c4d83e7a652a",
-                                                    "Udfald": "spinal_fødsel"
+                                                    "Udfald": "naad12"
+                                                },
+                                                {
+                                                    "GUID": "9054e1da-858c-4f61-b371-7290be600069",
+                                                    "Udfald": "perifer_blokade"
                                                 }
                                             ]
                                         }
@@ -94,6 +99,7 @@
                                     "childType": "Attribute_ResultCode",
                                     "type": "document",
                                     "GUID": "00007315-eb76-4527-b61d-8c24562984a1",
+                                    "description": "Ekstra oplysninger til udfald: \n\n- naad12  = Fødespinal  ",
                                     "error": {}
                                 },
                                 {
@@ -203,12 +209,11 @@
         "3a1f54c6-2bd2-4627-af1e-b7fc1166f86b": "Contact",
         "cf8daba0-5ab0-45de-877e-3b5ef200a9ce": "Diagnosis",
         "15c02db2-8ff2-44b2-8855-229865dc6e46": "Dansk Anæstesi Database",
-        "8b5eb735-2cc9-48d5-8e66-802a55f40aa2": "SOR_code",
+        "8b5eb735-2cc9-48d5-8e66-802a55f40aa2": "SOR_anesthesia",
         "a55bdcff-f4f2-4641-9b94-31ff86f27df7": "pain_management",
         "00007315-eb76-4527-b61d-8c24562984a1": "ResultCode",
         "d9d8ff13-55f3-4494-b010-28c487091e14": "Value_String",
-        "da5853ef-b7ae-49b5-9f72-714c279b5d0f": "DateTime",
-        "7f3f50e3-7a5a-4b9c-84a1-448eaa87c84c": "Value_DateTime"
+        "da5853ef-b7ae-49b5-9f72-714c279b5d0f": "DateTime"
     },
     "definitions": {
         "type": "definitions",
@@ -233,7 +238,7 @@
     "creationTS": "2024-10-29T09:07:28.671Z",
     "GUID": "a6e492e1-9aca-4065-a08d-5de8d3a5b20b",
     "isLineageEnabled": false,
-    "lastModifTS": "2024-10-29T09:17:27.612Z",
+    "lastModifTS": "2024-11-18T10:13:38.351Z",
     "persistenceSchemaVersion": "6",
     "isCreatedByPlugin": true,
     "pluginInformation": {
@@ -244,6 +249,7 @@
     "applicationInformation": {
         "version": "6.11.9"
     },
+    "hackoladeMeta": {},
     "settings": {
         "centralPane": {
             "dbLevel": {

@@ -176,7 +176,7 @@
             "GUID": "15c02db2-8ff2-44b2-8855-229865dc6e46",
             "bucketId": "ef71a388-dddd-4208-b2f6-6c977c572efe",
             "dbNameShort": "DAD5",
-            "dbSchema": "smertebehandling",
+            "dbSchema": "Smertebehandling",
             "dbImplementationGuide": "Alle anæstesier udført på danske offentlige og private hospitaler og klinikker indgår i populationen til Dansk Anæstesi Database.\n\nDatateknisk trigger for en anæstesi: Er der oprettet et anæstesiskema/anæstesiprocedure på patienten med et starttidspunkt for anæstesien, betragtes det som en anæstesi. ",
             "docLink": "https://rkkpdk.github.io/RKKP.afdDI.Webservice.DAD5.PainTreatment/"
         }
@@ -240,7 +240,7 @@
     "creationTS": "2024-10-29T09:07:28.671Z",
     "GUID": "a6e492e1-9aca-4065-a08d-5de8d3a5b20b",
     "isLineageEnabled": false,
-    "lastModifTS": "2024-12-16T14:28:52.643Z",
+    "lastModifTS": "2024-12-17T10:39:19.045Z",
     "persistenceSchemaVersion": "6",
     "isCreatedByPlugin": true,
     "pluginInformation": {

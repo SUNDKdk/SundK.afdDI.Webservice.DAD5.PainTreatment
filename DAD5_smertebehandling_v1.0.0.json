@@ -130,6 +130,7 @@
                             "GUID": "a55bdcff-f4f2-4641-9b94-31ff86f27df7",
                             "realName": "Smertebehandling",
                             "description": "Typen og Dato I forhold til smertebehandling som patienten har modtaget",
+                            "required": true,
                             "error": {}
                         }
                     ],
@@ -240,7 +241,7 @@
     "creationTS": "2024-10-29T09:07:28.671Z",
     "GUID": "a6e492e1-9aca-4065-a08d-5de8d3a5b20b",
     "isLineageEnabled": false,
-    "lastModifTS": "2024-12-17T10:39:19.045Z",
+    "lastModifTS": "2025-01-28T11:24:26.626Z",
     "persistenceSchemaVersion": "6",
     "isCreatedByPlugin": true,
     "pluginInformation": {
